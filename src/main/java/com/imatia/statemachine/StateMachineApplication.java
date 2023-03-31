@@ -1,4 +1,4 @@
-package com.imatia.statemachine.config;
+package com.imatia.statemachine;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
