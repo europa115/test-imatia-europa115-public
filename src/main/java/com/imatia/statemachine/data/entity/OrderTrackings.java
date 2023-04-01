@@ -30,9 +30,12 @@ public class OrderTrackings implements Serializable {
     @NotNull
     private Integer trackingStatusId;
 
-    public boolean actualizeOrderStatus (){
-        return  !trackingStatusId.equals(4);
+
+    public boolean actualizeOrderStatus() {
+        return !trackingStatusId.equals(4);
     }
 
-    public boolean isPickedUpStatus (){return  trackingStatusId.equals(1);}
+    public boolean isPickedUpStatus() {
+        return trackingStatusId.equals(1);
+    }
 }
