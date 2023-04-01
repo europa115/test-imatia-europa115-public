@@ -16,7 +16,8 @@ public class OrderTrackingService {
         Optional<OrderTrackings> optionalOrderTrackings = orderTrackingRepository.findTopByOrdenIdOrderByIdDesc(orderTrackings.getOrdenId());
 
         if (optionalOrderTrackings.isPresent()) {
-            if (optionalOrderTrackings.get().actualizeOrderStatus() && !orderTrackings.isPickedUpStatus()) {
+            if (optionalOrderTrackings.get().actualizeOrderStatus() && !orderTrackings.isPickedUpStatus() &&
+                    !orderTrackings.getTrackingStatusId().equals(optionalOrderTrackings.get().getTrackingStatusId())) {
                 orderTrackingRepository.save(orderTrackings);
             }
             return;
