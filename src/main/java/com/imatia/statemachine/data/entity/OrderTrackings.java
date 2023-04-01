@@ -1,11 +1,10 @@
-package com.imatia.statemachine.entity;
+package com.imatia.statemachine.data.entity;
 
+import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import net.bytebuddy.dynamic.loading.InjectionClassLoader;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -22,24 +21,18 @@ public class OrderTrackings implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    @NotNull
     private Long ordenId;
-   /* @ManyToOne
-    private Order order;*/
-
+    @NotNull
     private Date changeStatusDate;
-
+    @NotNull
     private ZonedDateTime insertDate;
+    @NotNull
     private Integer trackingStatusId;
 
     public boolean actualizeOrderStatus (){
         return  !trackingStatusId.equals(4);
-
     }
 
-    public boolean isPickedUpStatus (){
-
-        return  trackingStatusId.equals(1);
-
-    }
+    public boolean isPickedUpStatus (){return  trackingStatusId.equals(1);}
 }

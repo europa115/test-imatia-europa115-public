@@ -1,10 +1,10 @@
-package com.imatia.statemachine.entity;
+package com.imatia.statemachine.data.entity;
 
 import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Set;
+
 
 
 @Entity
@@ -15,13 +15,9 @@ import java.util.Set;
 public class TrackingStatus implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idStatus;
+    private Long idStatus;
 
     @Column(nullable = false)
     private String status;
-
-    /*@OneToMany
-    private Set<Order> orders;*/
-
 
 }

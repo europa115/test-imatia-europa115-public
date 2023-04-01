@@ -6,20 +6,15 @@ import lombok.Data;
 
 import java.time.ZonedDateTime;
 import java.util.Date;
+
 @Data
-public class OrderTrackingsDto{
+public class OrderTrackingsDto {
 
     private Long id;
-
     private Integer trackingStatusId;
     @JsonProperty("orderId")
     private Long ordenId;
-
     private Date changeStatusDate;
-
-    private ZonedDateTime insertDate=ZonedDateTime.now();
-
-
-
+    private ZonedDateTime insertDate = ZonedDateTime.now();
 
 }
